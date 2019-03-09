@@ -31,4 +31,12 @@ public class IndexUtil {
         //把列表转换成json数据
         return  JsonUtils.objectToJson(ad1Nodes);
     }
+
+    public static List<TbContent> getContent(ContentService contentService, Long id){
+        //根据cid查询内容列表
+        List<TbContent> list=contentService.getContentByCid(id);
+        //把列表转换成json数据
+        return  list;
+    }
+
 }
