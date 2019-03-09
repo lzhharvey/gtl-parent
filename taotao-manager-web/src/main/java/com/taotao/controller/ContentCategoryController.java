@@ -23,6 +23,9 @@ public class ContentCategoryController {
     @ResponseBody
     public List<EasyUITreeNode> getContentCategoryList(@RequestParam(value = "id",defaultValue ="0" ) Long parentId){
         List<EasyUITreeNode> list=contentCategoryService.getContentCategoryList(parentId);
+        for (EasyUITreeNode easyUITreeNode : list) {
+            System.out.println(easyUITreeNode.getText()+" "+easyUITreeNode.getId());
+        }
         return list;
     }
 

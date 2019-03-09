@@ -208,17 +208,17 @@ pageConfig.DATA_MScroll =[
 })();
 </script>
 </div><!--da end-->
-<div id="jdnews" class="m m1" >
+	<%--淘淘快报--%>
+	<div id="jdnews" class="m m1" >
 <div class="mt">
-<h2>淘淘快报</h2>
+<h2>快报</h2>
 <div class="extra" clstag="homepage|keycount|home2013|11a"><a href="http://www.jd.com/moreSubject.aspx" target="_blank">更多快报&nbsp;&gt;</a></div>
 </div>
 <div class="mc">
 	<ul>
-		<li class="odd" clstag="homepage|keycount|home2013|11b1"><a href="http://club.jr.jd.com/girls/jingxuan" target="_blank" title="38女人节得3800理财金">38女人节得3800理财金</a></li>					
-				<li clstag="homepage|keycount|home2013|11b1"><a href="http://sale.jd.com/act/U0jwsxIFrmO.html" target="_blank" title="开学季音像299减99">开学季音像299减99</a></li>
-				<li class="odd" clstag="homepage|keycount|home2013|11b1"><a href="http://sale.jd.com/act/Kz4QnjJMuL.html" target="_blank" title="情定金生相约钻石婚">情定金生相约钻石婚</a></li>					
-				<li clstag="homepage|keycount|home2013|11b1"><a href="http://sale.jd.com/act/Z5o4RNyF2Uv.html" target="_blank" title="爆款造型品 扮靓美人计">爆款造型品 扮靓美人计</a></li>
+		<c:forEach items="${ad2}" var="kb" >
+		<li class="odd" clstag="homepage|keycount|home2013|11b1"><a href="http://club.jr.jd.com/girls/jingxuan" target="_blank" title="38女人节得3800理财金">${kb.title}</a></li>
+		</c:forEach>
 	</ul>
 </div>
 </div>

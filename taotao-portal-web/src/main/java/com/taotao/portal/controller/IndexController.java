@@ -44,6 +44,10 @@ public class IndexController {
     @Value("${AD1_ysfxgg_HEIGHT_B}")
     private Integer AD1_ysfxgg_HEIGHT_B;
 
+    //快报
+    @Value("${AD2_KB}")
+    private Long AD2_KB;
+
 
     @Autowired
     private  ContentService contentService;
@@ -51,16 +55,25 @@ public class IndexController {
     //返回的"index",不能使用@ResponeBody注解，不然无法返回jsp页面
     @RequestMapping("/index")
     public String showIndex(Model mode){
+        String json;
         //轮播
-        String ad1Json=IndexUtil.getContent(contentService,AD1_CATEGORY_ID,AD1_HEIGHT,AD1_HEIGHT_B,AD1_WIDTH,AD1_WIDTH_B);
+        json=IndexUtil.getContent(contentService,AD1_CATEGORY_ID,AD1_HEIGHT,AD1_HEIGHT_B,AD1_WIDTH,AD1_WIDTH_B);
         //把json数据传到页面
-        mode.addAttribute("ad1",ad1Json);
+        mode.addAttribute("ad1",json);
 
         //右上方广告
         //把列表转换成json数据
-        ad1Json=IndexUtil.getContent(contentService,AD1_ysfxgg,AD1_ysfxgg_HEIGHT,AD1_ysfxgg_HEIGHT_B,AD1_ysfxgg_WIDTH,AD1_ysfxgg_WIDTH_B);
+        json=IndexUtil.getContent(contentService,AD1_ysfxgg,AD1_ysfxgg_HEIGHT,AD1_ysfxgg_HEIGHT_B,AD1_ysfxgg_WIDTH,AD1_ysfxgg_WIDTH_B);
         //把json数据传到页面
-        mode.addAttribute("ad",ad1Json);
+        mode.addAttribute("ad",json);
+
+        //快报  返回的是list,不是json了
+        List<TbContent> list=IndexUtil.getContent(contentService,AD2_KB);
+        //把json数据传到页面
+        mode.addAttribute("ad2",list);
+
+
+
 
         return "index";
     }

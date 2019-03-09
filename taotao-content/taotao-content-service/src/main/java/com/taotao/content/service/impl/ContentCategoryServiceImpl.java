@@ -33,6 +33,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
         //执行查询
         List<TbContentCategory> list=tbContentCategoryMapper.selectByExample(example);
         List<EasyUITreeNode> resultList=new ArrayList<>();
+
         for (TbContentCategory tbContentCategory :list){
             EasyUITreeNode node=new EasyUITreeNode();
             node.setId(tbContentCategory.getId());
