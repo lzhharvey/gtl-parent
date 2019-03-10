@@ -22,6 +22,11 @@ public class JedisClientCluster implements JedisClient {
 	}
 
 	@Override
+	public Long del(String key) {
+		return jedisCluster.del(key);
+	}
+
+	@Override
 	public Boolean exists(String key) {
 		return jedisCluster.exists(key);
 	}
@@ -55,5 +60,7 @@ public class JedisClientCluster implements JedisClient {
 	public Long hdel(String key, String... field) {
 		return jedisCluster.hdel(key, field);
 	}
+
+
 
 }

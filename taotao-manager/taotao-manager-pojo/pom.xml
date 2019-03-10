@@ -7,4 +7,5 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>taotao-manager-pojo</artifactId>
+	<packaging>jar</packaging>
 </project>

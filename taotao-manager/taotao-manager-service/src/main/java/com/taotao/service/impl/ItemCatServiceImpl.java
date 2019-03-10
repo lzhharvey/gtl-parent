@@ -10,7 +10,6 @@ import com.taotao.common.pojo.EasyUITreeNode;
 import com.taotao.mapper.TbItemCatMapper;
 import com.taotao.pojo.TbItemCat;
 import com.taotao.pojo.TbItemCatExample;
-import com.taotao.pojo.TbItemCatExample.Criteria;
 import com.taotao.service.ItemCatService;
 
 /**
@@ -31,7 +30,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 		//根据父节点id查询子节点列表
 		TbItemCatExample example = new TbItemCatExample();
 		//设置查询条件
-		Criteria criteria = example.createCriteria();
+		TbItemCatExample.Criteria criteria = example.createCriteria();
 		//设置parentid
 		criteria.andParentIdEqualTo(parentId);
 		//执行查询
@@ -50,4 +49,39 @@ public class ItemCatServiceImpl implements ItemCatService {
 		return resultList;
 	}
 
+	@Override
+	public List<TbItemCat> getItemCat(TbItemCat tbItemCat) {
+
+		TbItemCatExample tbItemCatExample=new TbItemCatExample();
+		TbItemCatExample.Criteria criteria = tbItemCatExample.createCriteria();
+		if (tbItemCat.getId()!=null){
+		criteria.andIdEqualTo(tbItemCat.getId());
+		}
+		if (tbItemCat.getIsParent()!=null) {
+		criteria.andIsParentEqualTo(tbItemCat.getIsParent());
+		}
+		if (tbItemCat.getId()!=null) {
+			criteria.andIdEqualTo(tbItemCat.getId());
+		}
+		if (tbItemCat.getParentId()!=null) {
+			criteria.andParentIdEqualTo(tbItemCat.getParentId());
+		}
+		if (tbItemCat.getName()!=null) {
+			criteria.andNameEqualTo(tbItemCat.getName());
+		}
+		if (tbItemCat.getStatus()!=null) {
+			criteria.andStatusEqualTo(tbItemCat.getStatus());
+		}
+		if (tbItemCat.getSortOrder()!=null) {
+			criteria.andSortOrderEqualTo(tbItemCat.getSortOrder());
+		}
+		if (tbItemCat.getCreated()!=null) {
+			criteria.andCreatedEqualTo(tbItemCat.getCreated());
+		}
+		if (tbItemCat.getUpdated()!=null) {
+			criteria.andUpdatedEqualTo(tbItemCat.getUpdated());
+		}
+		List<TbItemCat> tbItemCats = itemCatMapper.selectByExample(tbItemCatExample);
+		return tbItemCats;
+	}
 }
