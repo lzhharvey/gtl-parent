@@ -1,5 +1,6 @@
 package com.taotao.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -128,6 +129,10 @@ public class ItemServiceImpl implements ItemService {
 			}
 		});
 
+		//同步缓存
+		//删除对应的缓存信息
+		jedisClient.del(ITEM_INFO+ ":item");
+
 		//返回结果
 		return TaotaoResult.ok();
 	}
@@ -156,5 +161,72 @@ public class ItemServiceImpl implements ItemService {
 			e.printStackTrace();
 		}
 		return tbItemDesc;
+	}
+
+	@Override
+	public List<TbItem> getItem(TbItem tbItem) {
+		TbItemExample tbItemExample=new TbItemExample();
+		TbItemExample.Criteria criteria = tbItemExample.createCriteria();
+		if (tbItem.getId()!=null){
+		criteria.andIdEqualTo(tbItem.getId());
+		}
+		if (tbItem.getTitle()!=null){
+		criteria.andTitleEqualTo(tbItem.getTitle());
+		}
+		if (tbItem.getSellPoint()!=null) {
+			criteria.andSellPointEqualTo(tbItem.getSellPoint());
+		}
+		if (tbItem.getPrice()!=null) {
+		criteria.andPriceEqualTo(tbItem.getPrice());
+		}
+		if (tbItem.getNum()!=null) {
+		criteria.andNumEqualTo(tbItem.getNum());
+		}
+		if (tbItem.getBarcode()!=null) {
+		criteria.andBarcodeEqualTo(tbItem.getBarcode());
+		}
+		if (tbItem.getImage()!=null) {
+		criteria.andImageEqualTo(tbItem.getImage());
+		}
+		if (tbItem.getCid()!=null) {
+		criteria.andCidEqualTo(tbItem.getCid());
+		}
+		if (tbItem.getStatus()!=null) {
+		criteria.andStatusEqualTo(tbItem.getStatus());
+		}
+		if (tbItem.getCreated()!=null) {
+		criteria.andCreatedEqualTo(tbItem.getCreated());
+		}
+		if (tbItem.getUpdated()!=null) {
+		criteria.andUpdatedEqualTo(tbItem.getUpdated());
+		}
+
+
+		//查询数据库之前先查询缓存
+		try{
+			String s = jedisClient.get(ITEM_INFO+":"+tbItem.getCid()+ ":item");
+			if(StringUtils.isNotBlank(s)){
+				//把json数据转成pojo
+				List<TbItem> tbItemList = JSON.parseArray(s, TbItem.class);
+				return tbItemList;
+			}
+
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+		//查询数据库
+		List<TbItem> tbItems = itemMapper.selectByExample(tbItemExample);
+		//并把数据添加到缓存
+		try {
+			//把查询结果添加到缓存
+			jedisClient.set(ITEM_INFO  +":"+tbItem.getCid()+ ":item", JSON.toJSONString(tbItems));
+			//设置过期时间，提高缓存利用率
+			jedisClient.expire(ITEM_INFO+":"+tbItem.getCid()  + ":item",TIME_EXPIREl);
+		}catch(Exception  e){
+			e.printStackTrace();
+		}
+
+		return tbItems;
 	}
 }
