@@ -105,16 +105,16 @@
                   </label>
               </span>
               <span class="delete">
-                  <b>
-                  </b>
-                  <a href="javascript:void(0);" clstag="clickcart|keycount|xincart|clearcartlink" id="remove-batch">
-                          删除选中的商品
-                  </a>
+                  <%--<b>--%>
+                  <%--</b>--%>
+                  <%--<a href="javascript:void(0);" clstag="clickcart|keycount|xincart|clearcartlink" id="remove-batch">--%>
+                          <%--删除选中的商品--%>
+                  <%--</a>--%>
               </span>
               <span class="shopping">
-                  <b>
-                  </b>
-                  <a href="/" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
+                  <%--<b>--%>
+                  <%--</b>--%>
+                  <%--<a href="/" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>--%>
               </span>
           </div>
           <div class="cart-total-2014">
