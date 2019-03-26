@@ -29,8 +29,12 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
+					<!--/ 表示部署到webapps下的ROOT-->
 					<path>/</path>
 					<port>8080</port>
+					<url>http://39.107.91.81:8080/manager/text</url>
+					<username>tomcat</username>
+					<password>tomcat</password>
 				</configuration>
 			</plugin>
 		</plugins>
