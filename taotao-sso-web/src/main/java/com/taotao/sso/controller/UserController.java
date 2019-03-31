@@ -13,6 +13,7 @@ import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
@@ -49,7 +50,13 @@ public class UserController {
         //将token写入cookie  密码输的不对 login.getData()会空指针  原因result里的data为null
         if(result.getStatus()==200) {
             //把token写入cookie
-            CookieUtils.setCookie(request, response, TOKEN_KEY, result.getData().toString());
+//            System.out.println("+++++++++++++domainName: " +CookieUtils.getDomainName(request));
+//            CookieUtils.setCookie(request, response, TOKEN_KEY, result.getData().toString());
+            Cookie cookie = new Cookie(TOKEN_KEY, result.getData().toString());
+            cookie.setDomain("localhost");
+            cookie.setPath("/");
+            cookie.setMaxAge(36000);
+            response.addCookie(cookie);
         }
         return result;
     }

@@ -14,8 +14,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +66,17 @@ public class CartController {
             cartItemList.add(item);
         }
         //把购物车列表写入cookie
-        CookieUtils.setCookie(request,response,CART_KEY, JSON.toJSONString(cartItemList),CART_EXPIER,true);
+//        CookieUtils.setCookie(request,response,CART_KEY, JSON.toJSONString(cartItemList),CART_EXPIER,true);
+        try {
+            Cookie cookie = new Cookie(CART_KEY, URLEncoder.encode(JSON.toJSONString(cartItemList), "utf-8"));
+            cookie.setDomain("localhost");
+            cookie.setPath("/");
+            cookie.setMaxAge(CART_EXPIER);
+            response.addCookie(cookie);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         //返回添加成功页面
         return "cartSuccess";
     }
@@ -121,7 +133,16 @@ public class CartController {
             }
         }
         //把购物车列表写入cookie
-        CookieUtils.setCookie(request,response,CART_KEY, JSON.toJSONString(cartItemList),CART_EXPIER,true);
+        try {
+            Cookie cookie = new Cookie(CART_KEY, URLEncoder.encode(JSON.toJSONString(cartItemList), "utf-8"));
+            cookie.setDomain("localhost");
+            cookie.setPath("/");
+            cookie.setMaxAge(CART_EXPIER);
+            response.addCookie(cookie);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         //重定向到购物车列表页面
         return "redirect:/cart/cart.html";
     }

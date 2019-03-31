@@ -194,7 +194,7 @@ public final class CookieUtils {
     /**
      * 得到cookie的域名
      */
-    private static final String getDomainName(HttpServletRequest request) {
+    public static final String getDomainName(HttpServletRequest request) {
         String domainName = null;
 
         String serverName = request.getRequestURL().toString();

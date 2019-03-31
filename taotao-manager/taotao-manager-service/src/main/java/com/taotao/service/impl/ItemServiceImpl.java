@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSON;
 import com.taotao.jedis.JedisClient;
+import com.taotao.pojo.TbItemDescExample;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -228,5 +229,57 @@ public class ItemServiceImpl implements ItemService {
 		}
 
 		return tbItems;
+	}
+
+	/**
+	 * 删除
+	 * @param ids
+	 * @return TaotaoResult
+	 */
+	@Override
+	public TaotaoResult deleteItem(List<Long> ids) {
+		for (Long l: ids){
+			TbItemExample tbItemExample=new TbItemExample();
+			//设置查询条件
+			TbItemExample.Criteria criteria = tbItemExample.createCriteria();
+			criteria.andIdEqualTo(l);
+			//执行删除
+			try{
+				itemMapper.deleteByExample(tbItemExample);
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+		return TaotaoResult.ok();
+	}
+
+	/**
+	 * 更新
+	 * @param item
+	 * @return TaotaoResult
+	 */
+	@Override
+	public TaotaoResult updateItem(TbItem item,String desc) {
+		//设置更新条件
+		try {
+			// 1、根据商品id，更新商品表，条件更新
+			TbItemExample itemExample = new TbItemExample();
+			TbItemExample.Criteria criteria = itemExample.createCriteria();
+			criteria.andIdEqualTo(item.getId());
+			itemMapper.updateByExampleSelective(item, itemExample);
+
+			// 2、根据商品id，更新商品描述表，条件更新
+			TbItemDesc itemDesc = new TbItemDesc();
+			itemDesc.setItemDesc(desc);
+			TbItemDescExample itemDescExample = new TbItemDescExample();
+			com.taotao.pojo.TbItemDescExample.Criteria createCriteria =itemDescExample.createCriteria();
+			createCriteria.andItemIdEqualTo(item.getId());
+			itemDescMapper.updateByExampleSelective(itemDesc, itemDescExample);
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+		return TaotaoResult.ok();
 	}
 }
