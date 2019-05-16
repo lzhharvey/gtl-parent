@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gtl-manager-service:war">
+    <output-path>$PROJECT_DIR$/gtl-manager/gtl-manager-service/target</output-path>
+    <root id="archive" name="gtl-manager-service.war">
+      <element id="artifact" artifact-name="gtl-manager-service:war exploded" />
+    </root>
+  </artifact>
+</component>

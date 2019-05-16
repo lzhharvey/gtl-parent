@@ -6,27 +6,55 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="taotao-cart-web" />
-        <module name="taotao-common" />
-        <module name="taotao-content-interface" />
-        <module name="taotao-content-service" />
-        <module name="taotao-item-web" />
-        <module name="taotao-manager-dao" />
-        <module name="taotao-manager-interface" />
-        <module name="taotao-manager-pojo" />
-        <module name="taotao-manager-service" />
-        <module name="taotao-manager-web" />
-        <module name="taotao-order-interface" />
-        <module name="taotao-order-service" />
-        <module name="taotao-order-web" />
-        <module name="taotao-portal-web" />
-        <module name="taotao-search-interface" />
-        <module name="taotao-search-service" />
-        <module name="taotao-search-web" />
-        <module name="taotao-sso-interface" />
-        <module name="taotao-sso-service" />
-        <module name="taotao-sso-web" />
+        <module name="gtl-cart-web" />
+        <module name="gtl-common" />
+        <module name="gtl-content-interface" />
+        <module name="gtl-content-service" />
+        <module name="gtl-item-web" />
+        <module name="gtl-manager-dao" />
+        <module name="gtl-manager-interface" />
+        <module name="gtl-manager-pojo" />
+        <module name="gtl-manager-service" />
+        <module name="gtl-manager-web" />
+        <module name="gtl-order-interface" />
+        <module name="gtl-order-service" />
+        <module name="gtl-order-web" />
+        <module name="gtl-portal-web" />
+        <module name="gtl-search-interface" />
+        <module name="gtl-search-service" />
+        <module name="gtl-search-web" />
+        <module name="gtl-sso-interface" />
+        <module name="gtl-sso-service" />
+        <module name="gtl-sso-web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gtl-cart-web" target="1.7" />
+      <module name="gtl-common" target="1.7" />
+      <module name="gtl-content" target="1.7" />
+      <module name="gtl-content-interface" target="1.7" />
+      <module name="gtl-content-service" target="1.7" />
+      <module name="gtl-item-web" target="1.7" />
+      <module name="gtl-manager" target="1.7" />
+      <module name="gtl-manager-dao" target="1.7" />
+      <module name="gtl-manager-interface" target="1.7" />
+      <module name="gtl-manager-pojo" target="1.7" />
+      <module name="gtl-manager-service" target="1.7" />
+      <module name="gtl-manager-web" target="1.7" />
+      <module name="gtl-order" target="1.7" />
+      <module name="gtl-order-interface" target="1.7" />
+      <module name="gtl-order-service" target="1.7" />
+      <module name="gtl-order-web" target="1.7" />
+      <module name="gtl-parent" target="1.7" />
+      <module name="gtl-portal-web" target="1.7" />
+      <module name="gtl-search" target="1.7" />
+      <module name="gtl-search-interface" target="1.7" />
+      <module name="gtl-search-service" target="1.7" />
+      <module name="gtl-search-web" target="1.7" />
+      <module name="gtl-sso" target="1.7" />
+      <module name="gtl-sso-interface" target="1.7" />
+      <module name="gtl-sso-service" target="1.7" />
+      <module name="gtl-sso-web" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

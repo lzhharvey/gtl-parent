@@ -1,23 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.taotao</groupId>
-	<artifactId>taotao-parent</artifactId>
+	<groupId>com.gtl</groupId>
+	<artifactId>gtl-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>taotao-portal-web</module>
-        <module>taotao-content</module>
-        <module>taotao-search</module>
-        <module>taotao-search-web</module>
-        <module>taotao-item-web</module>
-        <module>taotao-sso</module>
-        <module>taotao-sso-web</module>
-        <module>taotao-cart-web</module>
-        <module>taotao-order</module>
-        <module>taotao-order-web</module>
-		<module>taotao-common</module>
-		<module>taotao-manager</module>
-		<module>taotao-manager-web</module>
+        <module>gtl-portal-web</module>
+        <module>gtl-content</module>
+        <module>gtl-search</module>
+        <module>gtl-search-web</module>
+        <module>gtl-item-web</module>
+        <module>gtl-sso</module>
+        <module>gtl-sso-web</module>
+        <module>gtl-cart-web</module>
+        <module>gtl-order</module>
+        <module>gtl-order-web</module>
+		<module>gtl-common</module>
+		<module>gtl-manager</module>
+		<module>gtl-manager-web</module>
     </modules>
     <packaging>pom</packaging>
 	<properties>

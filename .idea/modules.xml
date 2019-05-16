@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gtl-cart-web/gtl-cart-web.iml" filepath="$PROJECT_DIR$/gtl-cart-web/gtl-cart-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-common/gtl-common.iml" filepath="$PROJECT_DIR$/gtl-common/gtl-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-content/gtl-content.iml" filepath="$PROJECT_DIR$/gtl-content/gtl-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-content/gtl-content-interface/gtl-content-interface.iml" filepath="$PROJECT_DIR$/gtl-content/gtl-content-interface/gtl-content-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-content/gtl-content-service/gtl-content-service.iml" filepath="$PROJECT_DIR$/gtl-content/gtl-content-service/gtl-content-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-item-web/gtl-item-web.iml" filepath="$PROJECT_DIR$/gtl-item-web/gtl-item-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager/gtl-manager.iml" filepath="$PROJECT_DIR$/gtl-manager/gtl-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager/gtl-manager-dao/gtl-manager-dao.iml" filepath="$PROJECT_DIR$/gtl-manager/gtl-manager-dao/gtl-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager/gtl-manager-interface/gtl-manager-interface.iml" filepath="$PROJECT_DIR$/gtl-manager/gtl-manager-interface/gtl-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager/gtl-manager-pojo/gtl-manager-pojo.iml" filepath="$PROJECT_DIR$/gtl-manager/gtl-manager-pojo/gtl-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager/gtl-manager-service/gtl-manager-service.iml" filepath="$PROJECT_DIR$/gtl-manager/gtl-manager-service/gtl-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-manager-web/gtl-manager-web.iml" filepath="$PROJECT_DIR$/gtl-manager-web/gtl-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-order/gtl-order.iml" filepath="$PROJECT_DIR$/gtl-order/gtl-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-order/gtl-order-interface/gtl-order-interface.iml" filepath="$PROJECT_DIR$/gtl-order/gtl-order-interface/gtl-order-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-order/gtl-order-service/gtl-order-service.iml" filepath="$PROJECT_DIR$/gtl-order/gtl-order-service/gtl-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-order-web/gtl-order-web.iml" filepath="$PROJECT_DIR$/gtl-order-web/gtl-order-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-parent.iml" filepath="$PROJECT_DIR$/gtl-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-portal-web/gtl-portal-web.iml" filepath="$PROJECT_DIR$/gtl-portal-web/gtl-portal-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-search/gtl-search.iml" filepath="$PROJECT_DIR$/gtl-search/gtl-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-search/gtl-search-interface/gtl-search-interface.iml" filepath="$PROJECT_DIR$/gtl-search/gtl-search-interface/gtl-search-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-search/gtl-search-service/gtl-search-service.iml" filepath="$PROJECT_DIR$/gtl-search/gtl-search-service/gtl-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-search-web/gtl-search-web.iml" filepath="$PROJECT_DIR$/gtl-search-web/gtl-search-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-sso/gtl-sso.iml" filepath="$PROJECT_DIR$/gtl-sso/gtl-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-sso/gtl-sso-interface/gtl-sso-interface.iml" filepath="$PROJECT_DIR$/gtl-sso/gtl-sso-interface/gtl-sso-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-sso/gtl-sso-service/gtl-sso-service.iml" filepath="$PROJECT_DIR$/gtl-sso/gtl-sso-service/gtl-sso-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gtl-sso-web/gtl-sso-web.iml" filepath="$PROJECT_DIR$/gtl-sso-web/gtl-sso-web.iml" />
+    </modules>
+  </component>
+</project>
