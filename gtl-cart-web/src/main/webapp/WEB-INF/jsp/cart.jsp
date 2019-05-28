@@ -71,14 +71,14 @@
 		                	<span class="promise411 promise411_11345721" id="promise411_11345721"></span>
 		                </div>    
 		            </div>
-		            <div class="cell p-price"><span class="price">¥<fmt:formatNumber groupingUsed="false" value="${cart.price / 100}" maxFractionDigits="2" minFractionDigits="2"/> </span></div>
+		            <div class="cell p-price"><span class="price">¥<fmt:formatNumber groupingUsed="false" value="${cart.price / 1000}" maxFractionDigits="2" minFractionDigits="2"/> </span></div>
 		            <div class="cell p-promotion">
 		            </div>
 		            <div class="cell p-inventory stock-11345721">有货</div>
 		            <div class="cell p-quantity" for-stock="for-stock-11345721">
 		                <div class="quantity-form" data-bind="">
 		                    <a href="javascript:void(0);" class="decrement" clstag="clickcart|keycount|xincart|diminish1" id="decrement">-</a>
-		                    <input type="text" class="quantity-text" itemPrice="${cart.price}" itemId="${cart.id}" value="${cart.num }" id="changeQuantity-11345721-1-1-0">
+		                    <input type="text" class="quantity-text" itemPrice="${cart.price/10}" itemId="${cart.id}" value="${cart.num }" id="changeQuantity-11345721-1-1-0">
 		                    <a href="javascript:void(0);" class="increment" clstag="clickcart|keycount|xincart|add1" id="increment">+</a>
 		                </div>
 		            </div>
@@ -91,7 +91,7 @@
     </div><!-- product-list结束 -->
           <div class="cart-toolbar clearfix">
             <div class="total fr">
-                <p><span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice / 100}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>总计：</p>
+                <p><span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice / 1000}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>总计：</p>
                 <p><span id="totalRePrice">- ¥0.00</span>优惠：</p>
             </div>
             <div class="amout fr"><span id="selectedCount">1</span> 件商品</div>
@@ -135,7 +135,7 @@
               </div>
               <div class="total fr">
                   总计（不含运费）：
-                  <span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice / 100}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
+                  <span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice / 1000}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
               </div>
           </div>
       </div></div>

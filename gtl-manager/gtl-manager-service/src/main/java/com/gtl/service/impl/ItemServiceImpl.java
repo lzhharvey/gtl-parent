@@ -305,8 +305,8 @@ public class ItemServiceImpl implements ItemService {
 			});
 			//同步缓存
 			//删除对应的缓存信息
-			jedisClient.del(ITEM_INFO+ ":item");
-
+			jedisClient.del(ITEM_INFO+ ":"+item.getId()+":BASE");
+			jedisClient.del(ITEM_INFO+ ":"+item.getId()+":DESC");
 		}
 		catch (Exception e){
 			e.printStackTrace();

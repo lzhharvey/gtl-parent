@@ -53,6 +53,12 @@ public class OrderServiceImpl implements OrderService {
         //订单创建时间
         orderInfo.setCreateTime(new Date());
         orderInfo.setUpdateTime(new Date());
+        //订单价格/10
+        List<TbOrderItem> orderItems1 = orderInfo.getOrderItems();
+        for (TbOrderItem tbOrderItem:orderItems1){
+            tbOrderItem.setPrice(tbOrderItem.getPrice()/10);
+            tbOrderItem.setTotalFee(tbOrderItem.getTotalFee()/10);
+        }
         //向订单表插入数据
         tbOrderMapper.insert(orderInfo);
         //向订单明细表插入数据。
@@ -62,6 +68,8 @@ public class OrderServiceImpl implements OrderService {
             String oid = jedisClient.incr(ORDER_ITEM_ID_GEN_KEY).toString();
             orderItem.setId(oid);
             orderItem.setOrderId(orderId);
+            orderItem.setPrice(orderItem.getPrice()/100);
+            orderItem.setTotalFee(orderItem.getTotalFee()/100);
             //插入明细数据
             tbOrderItemMapper.insert(orderItem);
         }
@@ -89,6 +97,12 @@ public class OrderServiceImpl implements OrderService {
         //执行查询
         TbOrderExample example = new TbOrderExample();
         List<TbOrder> list = tbOrderMapper.selectByExample(example);
+
+        for (TbOrder order:list){
+            order.setPayment(Double.valueOf(order.getPayment())/10+"");
+        }
+
+
         //取查询结果
         PageInfo<TbOrder> pageInfo = new PageInfo<>(list);
         EasyUIDataGridResult result = new EasyUIDataGridResult();

@@ -5,7 +5,7 @@ var TT = gtl = {
 			return ;
 		}
         $.ajax({
-            url : "http://localhost:8088/user/token/" + _ticket,
+            url : "http://localhost:8088/page/token/" + _ticket,
             dataType : "jsonp",
             type : "GET",
             success : function(data){
@@ -17,7 +17,7 @@ var TT = gtl = {
                     $("#userId").val(userid);
                     $("#logout").click(function () {
                         $.ajax({
-                            url : "http://localhost:8088/user/logout/" + _ticket,
+                            url : "http://localhost:8088/page/logout/" + _ticket,
                             dataType : "jsonp",
                             type : "GET",
                             error: function(request) {  //失败

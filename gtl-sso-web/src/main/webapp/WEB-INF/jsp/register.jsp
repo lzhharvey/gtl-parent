@@ -93,7 +93,7 @@
                         <span class="label"><b class="ftx04">*</b>验证邮箱：</span>
 
                         <div class="fl item-ifo">
-                            <input type="text" id="email" maxlength="11" name="email"
+                            <input type="text" id="email" maxlength="20" name="email"
                                    class="text" tabindex="4"
                                    autocomplete="off" /> <i class="i-email"></i> <label
                                 id="email_succeed" class="blank"></label> <label

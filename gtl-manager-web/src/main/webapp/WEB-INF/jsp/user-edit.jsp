@@ -10,10 +10,10 @@
 	            <td>用户名:</td>
 	            <td><input class="easyui-textbox" type="text" name="username" data-options="required:true" style="width: 280px;"></input></td>
 	        </tr>
-	        <tr>
-	            <td>密码:</td>
-	            <td><input class="easyui-textbox" name="password" data-options="multiline:true,validType:'length[0,150]'" style="height:60px;width: 280px;"></input></td>
-	        </tr>
+	        <%--<tr>--%>
+	            <%--<td>密码:</td>--%>
+	            <%--<td><input class="easyui-textbox" name="password" data-options="multiline:true,validType:'length[0,150]'" style="height:60px;width: 280px;"></input></td>--%>
+	        <%--</tr>--%>
 	        <tr>
 	            <td>手机:</td>
 	            <td><input class="easyui-numberbox" type="text" name="phone" data-options="min:1,max:99999999999,required:true" />

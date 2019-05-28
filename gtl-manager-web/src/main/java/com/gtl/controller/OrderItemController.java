@@ -23,6 +23,13 @@ public class OrderItemController {
     @ResponseBody
     public EasyUIDataGridResult getOrderItemList(Integer page ,Integer rows){
         EasyUIDataGridResult orderList = orderItemService.getOrderItemList(page,rows);
+
+//        for(Object o:orderList.getRows()){
+//            if(o instanceof TbOrderItem){
+//                ((TbOrderItem) o).setPrice(((TbOrderItem) o).getPrice()/100);
+//                ((TbOrderItem) o).setTotalFee(((TbOrderItem) o).getTotalFee()/100);
+//            }
+//        }
         return orderList;
     }
 

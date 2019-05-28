@@ -218,8 +218,10 @@ public class UserServiceImpl  implements UserService {
         //设置更新条件
         try {
             //密码md5加密
-            String password=DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
-            user.setPassword(password);
+            if (user.getPassword()!=null) {
+                String password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+                user.setPassword(password);
+            }
             // 1、根据用户id，更新用户表，条件更新
             TbUserExample userExample = new TbUserExample();
             TbUserExample.Criteria criteria = userExample.createCriteria();

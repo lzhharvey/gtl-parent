@@ -6,7 +6,7 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 /**
- * 接受Activemq发送消息
+ * 接受Activemq发送消息，测试
  */
 public class MyMessageListener implements MessageListener {
     @Override

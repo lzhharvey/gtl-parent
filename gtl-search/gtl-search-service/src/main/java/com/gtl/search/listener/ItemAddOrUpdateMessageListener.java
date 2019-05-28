@@ -11,7 +11,7 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 /**
- * 监听商品添加事件，同步索引库
+ * 监听商品添加，更新事件，同步索引库
  */
 public class ItemAddOrUpdateMessageListener implements MessageListener {
     @Autowired

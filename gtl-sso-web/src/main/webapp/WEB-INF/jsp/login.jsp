@@ -79,7 +79,12 @@
 					if (data.status == 200) {
 						alert("登录成功！");
 						if (redirectUrl == "") {
+						    if($("#loginname").val()=="zhangsan" || $("#loginname").val()=="lisi"){
+                                location.href = "http://localhost:8081";
+                            }
+                            else {
 							location.href = "http://localhost:8082";
+                            }
 						} else {
                             location.href = redirectUrl;
 						}

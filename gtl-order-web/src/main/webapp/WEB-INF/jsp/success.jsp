@@ -44,7 +44,7 @@
 			    <li class="li-st">
 					<div class="fore1">订单号：<a href="javascript:void(0)">${orderId }</a></div>
 					<!-- 货到付款 -->
-					<div class="fore2">货到付款：<strong class="ftx-01">${payment}元</strong></div>
+					<div class="fore2">货到付款：<strong class="ftx-01">${payment/10}元</strong></div>
 					<div class="fore3">
 					   	购淘乐快递 &nbsp; 送货时间: 预计 ${date} 送达&nbsp;
 					</div>

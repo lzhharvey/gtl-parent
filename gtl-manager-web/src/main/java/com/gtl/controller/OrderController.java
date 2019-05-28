@@ -4,6 +4,7 @@ import com.gtl.common.pojo.EasyUIDataGridResult;
 import com.gtl.common.pojo.gtlResult;
 import com.gtl.order.service.OrderService;
 import com.gtl.pojo.TbOrder;
+import com.gtl.pojo.TbOrderItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,8 @@ public class OrderController {
     public EasyUIDataGridResult getOrderList(Integer page,Integer rows){
 
         EasyUIDataGridResult orderList = orderService.getOrderList(page, rows);
+
+
 
         return orderList;
     }
